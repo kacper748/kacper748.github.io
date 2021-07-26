@@ -1,0 +1,61 @@
+{
+    "items": [
+      {
+        "sys": { "id": "1" },
+        "fields": {
+          "title": "queen panel bed",
+          "price": 10.99,
+          "image": { "fields": { "file": { "url": "./images/bed1.png" } } }
+        }
+      },
+      {
+        "sys": { "id": "2" },
+        "fields": {
+          "title": "king panel bed",
+          "price": 12.99,
+          "image": { "fields": { "file": { "url": "./images/bed2.png" } } }
+        }
+      },
+      {
+        "sys": { "id": "3" },
+        "fields": {
+          "title": "single panel bed",
+          "price": 12.99,
+          "image": { "fields": { "file": { "url": "./images/bed3.png" } } }
+        }
+      },
+      {
+        "sys": { "id": "4" },
+        "fields": {
+          "title": "twin panel bed",
+          "price": 22.99,
+          "image": { "fields": { "file": { "url": "./images/bed4.png" } } }
+        }
+      },
+      {
+        "sys": { "id": "5" },
+        "fields": {
+          "title": "fridge",
+          "price": 88.99,
+          "image": { "fields": { "file": { "url": "./images/fridge.png" } } }
+        }
+      },
+      {
+        "sys": { "id": "6" },
+        "fields": {
+          "title": "dresser",
+          "price": 32.99,
+          "image": { "fields": { "file": { "url": "./images/dresser.png" } } }
+        }
+      },
+      {
+        "sys": { "id": "7" },
+        "fields": {
+          "title": "couch",
+          "price": 45.99,
+          "image": { "fields": { "file": { "url": "./images/couch.png" } } }
+        }
+      }
+    ]
+  }
+  
