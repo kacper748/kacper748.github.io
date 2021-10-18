@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap');
+
+body {
+    background-color: #1c1d25;
+    font-family: 'Poppins', sans-serif;
+    margin: auto;
+    color: white;
+}
+
+section {
+    height: auto;
+    margin: auto;
+    padding: 20px;
+}
+
+p {
+    text-align: justify;
+    text-justify: auto;
+}
+
+h2 {
+    text-align: center;
+}
+
+.hero {
+    padding: 5px;
+    text-align: center;
+}
+
+.my-image {
+    width: 150px;
+    height: auto;
+    border-radius: 120px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.css-image {
+    margin: 10px;
+    height: 40px;
+    left: 50%;
+    position: relative;
+    font-size: 40px;
+    width: 40px;
+    border-radius: 120px;
+    animation: hello 2s linear infinite;
+}
+
+@keyframes hello {
+    0% {
+        left: 0px;
+        top: 0px;
+    }
+    50% {
+        left: 0px;
+        top: 20px;
+    }
+    100% {
+        left: 0px;
+        top: 0px;
+    }
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    padding: 14px;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    color: burlywood;
+}
+
+.side-bar {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left: 15px;
+    top: 90px;
+}
+
+.side-bar i {
+    font-size: 40px;
+    margin-top: 10px;
+}
+
+.side-bar a {
+    color: white;
+}
+
+.side-bar a:hover {
+    color: burlywood;
+}
+
+.popup-email {
+    visibility: hidden;
+    background-color: burlywood;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    font-size: 16px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 15%;
+    left: 300%;
+    margin-left: -80px;
+    display: flex;
+    transition: transform 1s;
+    transform: translateX(-10%);
+}
+
+#email:hover .popup-email {
+    visibility: visible;
+    transform: translateX(0);
+}
+
+h1 {
+    font-size: 50px;
+    margin-bottom: 5px;
+}
+
+#projects {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.project-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.project-card {
+    width: 300px;
+    height: 580px;
+    border: 1px solid white;
+    box-shadow: 5px 5px 5px white;
+}
+
+.project-image {
+    margin-top: 25px;
+    width: 60%;
+    border-radius: 60px;
+}
+
+.subtext {
+    font-size: 15px;
+    font-weight: 300;
+    margin: auto 5px;
+}
+
+.middle {
+    height: 25%;
+}
+
+.languages {
+    height: 11%;
+}
+
+.subtext a {
+    text-decoration: none;
+    color: white;
+}
+
+.subtext a:hover {
+    text-decoration: none;
+    color: burlywood;
+}
+
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.popup:hover {
+    color: burlywood;
+}
+
+.popup:hover .popup-text {
+    visibility: visible;
+}
+
+.popup-text {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -80px;
+    display: flex;
+    flex-direction: column;
+}
+
+@media only screen and (max-width: 600px) {
+    .project-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    h1 {
+        font-size: 30px;
+    }
+    nav ul li a {
+        padding: 5px;
+        font-size: 12px;
+    }
+}

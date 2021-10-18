@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One">
+        <script src="https://kit.fontawesome.com/25b693234f.js" crossorigin="anonymous"></script>
+        <script src="app.js"></script>
+        <link rel="shortcut icon" href="house.ico"/>
+        <title>E-COMMERCE</title>
+    </head>
+    <body>
+        <!-- HEADER & CART -->
+        <header>
+            <a class="logo" href="index.html">E-COMMERCE</a>
+            <div class="cart-btn">
+                <span class="nav-icon">
+                    <i class="fas fa-cart-plus" style="font-size: 2em;"></i>
+                </span>
+            </div>
+            <div class="cart-items">0</div>
+        </header>
+
+        <!-- NAVIGATION BAR -->
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="cart.html">My Cart</a>
+            <a href="profile.html">My Profile</a>
+
+            <a class="sign" href="register.html">Sign Up</a>
+            <a class="log" href="login.html">Log In</a>
+        </nav>
+
+        <!-- MAIN BACKGROUND & BANNER -->
+        <div class="main">
+            <div class="banner">
+                <h1 class="banner-title">FURNITURE & HOME DECOR</h1>
+                <button class="banner-btn" onclick="window.location.href='products.html'">SHOP NOW</button>
+            </div>
+        </div>
+
+        <!-- CART -->
+        <div class="cart-overlay">
+            <div class="cart">
+                <span class="close-cart">
+                    <i class="fas fa-window-close"></i>
+                </span>
+                <h2>your cart</h2>
+                <div class="cart-content">
+                    <div class="cart-item">
+                        <img src="./images/bed1.png" alt="product">
+                        <h4>Classic BEd</h4>
+                        <h5>$28</h5>
+                        <span class="remove-item">remove</span>
+                    </div>
+                    <div>
+                        <i class="fas fa-chevron-up"></i>
+                        <p class="item-amount"></p>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-footer">
+                <h3>your total : $ <span class="cart-total">0</span></h3>
+                <button class="clear-cart banner-btn">clear cart</button>
+            </div>
+        </div>
+    </body>
+</html>

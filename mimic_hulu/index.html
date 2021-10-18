@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+
+        <link rel="icon" href="favicon.ico">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+        <title>Stream TV and Movies Live and Online | Hulu</title>
+    </head>
+    <body>
+        <div class="hero">
+            <nav>
+                <p id="login">LOG IN</p>
+            </nav>
+            <h5>try up to one month free</h5>
+            <img src="..\mimic_hulu\images\logo.png" alt="logo">
+            <h2>Watch thousands of TV shows and movies</h2>
+            <p>HBO MAX&#8482;, SHOWTIME&reg;, CINEMAX&reg; and STARZ&reg; available as add-ons.</p>
+            <button id="trial">start your free trial</button>
+            <p class="semi-transparent">Free trial for new & eligible returning subscribers only.</p>
+            <div class="hero-bar">
+                <img src="..\mimic_hulu\images\logos.png" alt="logos">
+                <div class="middle">
+                    <h5>bundle with any hulu plan & save</h5>
+                    <h3>Get Hulu, Disney+, and ESPN+</h3>
+                    <p style="text-decoration: underline; color:lightgrey;">Details</p>
+                </div>
+                <div class="button">
+                    <button id="bundle">get the disney bundle</button>
+                    <p>Terms apply</p>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="shows">
+            <h5>included in all plans</h5>
+            <h1>All The TV You Love</h1>
+            <h3>Stream full seasons of exclusive series, current-season episodes, hit movies, Hulu Originals, kids shows, and more.</h3>
+            <div class="shows-container">
+                <div class="shows-card" id="card1">
+                    <p>Past & Current Seasons</p>
+                    <h2>TV Shows</h2>
+                </div>
+                <div class="shows-card" id="card2">
+                    <p>New & Classic</p>
+                    <h2>Movies</h2>
+                </div>
+                <div class="shows-card" id="card3">
+                    <p>Groundbreaking</p>
+                    <h2>Hulu Originals</h2>
+                </div>
+                <div class="shows-card" id="card4">
+                    <p>Add-on</p>
+                    <h2>Premiums</h2>
+                </div>
+            </div>
+            <p>Premium network add-ons available for an additional cost</p>
+        </div>
+
+        <div class="limited">
+            <div class="border">
+                <h5 style="padding-bottom: 0;">HULU + LIVE TV</h5>
+                <h1>Limited-Time Savings</h2>
+                <h3>Save $10/month for 3 months on Hulu + Live TV. Just $54.99/mo for your first 3 months (after 7 day free trial, if eligible), then $64.99/mo. Cancel anytime.</h3>
+                <p class="semi-transparent">
+                    Offer for Hulu (ad-supported) + Live TV plan only. $54.99/month for 3 months, then $64.99/month. 
+                    Ends 11:59 PM PST on 10/28/21. Hulu + Live TV discount offer valid for new and eligible returning subscribers (who have not had Hulu in the past 3 months) only. 
+                    Hulu + Live TV free trial offer valid for new and eligible returning subscribers (who have not taken a free trial of Hulu in the past 12 months) only.
+                    <span style="text-decoration: underline;">Additional terms apply.</span>
+                </p>
+                <p style="text-decoration: underline; opacity: 0.7;">VIEW CHANNELS IN YOUR AREA →</p>
+                <div class="arrow">&#8595;</div>
+            </div> 
+        </div>
+
+        <div class="live-sports" id="backgroundChange">
+            <div class="sports-text">
+                <div class="sports-bar">
+                    <span id="bar1">LIVE SPORTS</span><span id="bar2">BREAKING NEWS</span><span id="bar3">BIGGEST EVENTS</span>
+                </div> 
+                <h1 id="sportsTitle">Live Sports</h1>
+                <div class="sports-description">
+                    <h2 id="sportsDescription">Catch your games at home or on the go. Stream live games from major college and pro leagues including the NCAA&reg;, NBA, NHL, NFL, and more.</h2>
+                </div>
+                <div class="sports-images"><img src="..\mimic_hulu\images\live-sports-logo-1.png" alt="logo-1"></div>
+                <div class="sports-images"><img src="..\mimic_hulu\images\live-sports-logo-2.png" alt="logo-2"></div>
+                <div class="sports-images"><img src="..\mimic_hulu\images\live-sports-logo-3.svg" alt="logo-3"></div>
+                <div class="sports-images"><img src="..\mimic_hulu\images\live-sports-logo-4.png" alt="logo-4"></div>
+                
+                <p class="semi-transparent">Live TV plan required. Regional restrictions, blackouts and additional terms apply. <span style="text-decoration: underline;">See details</span></p>
+            </div>
+            
+        </div>
+
+        <div class="plans">
+            <div class="plans-head">
+                <div class="plans-title">
+                    <h4>Select Your Plan</h4>
+                    <p>No hidden fees, equipment rentals, or installation appointments.</p>
+                    <p><strong>Switch plans or cancel anytime.^^</strong></p>
+                </div>
+                <div class="plans-types">
+                    <div class="plans-selection">
+                        <p class="banner">MOST POPULAR</p>
+                        <h4>Hulu</h4>
+                        <p>30 DAY FREE TRIAL</p>
+                        <button>SELECT</button>
+                    </div>
+                    <div class="plans-selection" id="greySelection">
+                        <p class="banner" style="visibility: hidden;">NONE</p>
+                        <h4>Hulu (No Ads)</h4>
+                        <p>30 DAY FREE TRIAL</p>
+                        <button>SELECT</button>
+                    </div>
+                    <div class="plans-selection">
+                        <p class="banner">LIMITED TIME</p>
+                        <h4>Hulu + Live TV</h4>
+                        <p>7 DAY FREE TRIAL</p>
+                        <button>GET DEAL</button>
+                    </div>
+                </div>
+            </div>
+            <div class="plans-table">
+                <table>
+                    <tr>
+                        <th>Monthly Price</th>
+                        <td>$5.99/mo**</td>
+                        <td>$11.99/mo**</td>
+                        <td>$54.99/mo for 3 mo. Save $10/month*</td>
+                    </tr>
+                    <tr>
+                        <th>Streaming Library with thousands of TV episodes and movies</th>
+                        <td>&#10003;</td>
+                        <td>&#10003;</td>
+                        <td>&#10003;</td>
+                    </tr>
+                    <tr>
+                        <th>Most new episodes the day after they air^</th>
+                        <td>&#10003;</td>
+                        <td>&#10003;</td>
+                        <td>&#10003;</td>
+                    </tr>
+                    <tr>
+                        <th>Access to award-winning Hulu Originals</th>
+                        <td>&#10003;</td>
+                        <td>&#10003;</td>
+                        <td>&#10003;</td>
+                    </tr>
+                    <tr>
+                        <th>Watch on your TV, laptop, phone, or tablet</th>
+                        <td>&#10003;</td>
+                        <td>&#10003;</td>
+                        <td>&#10003;</td>
+                    </tr>
+                    <tr>
+                        <th>Watch on 2 different screens at the same time</th>
+                        <td>&#10003;</td>
+                        <td>&#10003;</td>
+                        <td>&#10003;</td>
+                    </tr>
+                    <tr>
+                        <th>No ads in streaming library</th>
+                        <td>&#8213;</td>
+                        <td>&#10003;</td>
+                        <td>&#8213;</td>
+                    </tr>
+                    <tr>
+                        <th>Download and watch</th>
+                        <td>&#8213;</td>
+                        <td>&#10003;</td>
+                        <td>&#8213;</td>
+                    </tr>
+                    <tr>
+                        <th>Live TV with 75+ top channels. No cable required.</th>
+                        <td>&#8213;</td>
+                        <td>&#8213;</td>
+                        <td>&#10003;</td>
+                    </tr>
+                    <tr>
+                        <th>Live TV guide to navigate channels</th>
+                        <td>&#8213;</td>
+                        <td>&#8213;</td>
+                        <td>&#10003;</td>
+                    </tr>
+                    <tr>
+                        <th style="border-bottom: 1px solid lightgray;">Record Live TV with 50 hours of Cloud DVR storage</th>
+                        <td style="border-bottom: 1px solid lightgray;">&#8213;</td>
+                        <td style="border-bottom: 1px solid lightgray;">&#8213;</td>
+                        <td style="border-bottom: 1px solid lightgray;">&#10003;</td>
+                    </tr>
+                </table>
+                <div class="plans-bottom">
+                    <p>*Then $64.99/month. New and eligible returning subscribers only.</p>
+                    <p>**On 10/08/2021, the price of Hulu (ad-supported) will increase to $6.99/month and the price of Hulu (No Ads) will increase to $12.99/month.</p>
+                    <p>^For current-season shows in the streaming library only.</p>
+                    <p>^^Switches from Live TV to Hulu take effect as of the next billing cycle.</p>
+                </div>
+                <div id="addOns">
+                    <p>Show Add-ons &#8595;</p>
+                </div>
+                <div id="hiddenTable">
+                    <div class="plans-title">
+                        <h4>Available Add-ons</h4>
+                        <p>Add-ons available at an additional cost.</p>
+                        <p>Add them up after you sign up for Hulu.</p>
+                    </div>
+                    <table>
+                        <tr>
+                            <th>HBO Max™</th>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                        </tr>
+                        <tr>
+                            <th>CINEMAX®</th>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                        </tr>
+                        <tr>
+                            <th>SHOWTIME®</th>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                        </tr>
+                        <tr>
+                            <th>STARZ®</th>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                        </tr>
+                        <tr>
+                            <th>Unlimited Screens</th>
+                            <td>&#8213;</td>
+                            <td>&#8213;</td>
+                            <td>&#10003;</td>
+                        </tr>
+                        <tr>
+                            <th>Enhanced Cloud DVR</th>
+                            <td>&#8213;</td>
+                            <td>&#8213;</td>
+                            <td>&#10003;</td>
+                        </tr>
+                        <tr>
+                            <th>Entertainment Add-on</th>
+                            <td>&#8213;</td>
+                            <td>&#8213;</td>
+                            <td>&#10003;</td>
+                        </tr>
+                        <tr>
+                            <th>Espanol Add-on</th>
+                            <td>&#8213;</td>
+                            <td>&#8213;</td>
+                            <td>&#10003;</td>
+                        </tr>
+                    </table>
+                    <div id="addOns2">
+                        <p>Hide Add-ons &#8593;</p>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+
+        <footer>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>BROWSE</h4>
+                    <a href="#">Streaming Library</a>
+                    <a href="#">Live TV</a>
+                    <a href="#">Live News</a>
+                    <a href="#">Live News</a>
+                </div>
+                <div class="footer-column" style="padding-top: 60px;">
+                    <a href="#">TV Shows</a>
+                    <a href="#">Movies</a>
+                    <a href="#">Originals</a>
+                    <a href="#">Networks</a>
+                    <a href="#">Kids</a>
+                    <a href="#">FX on Hulu</a>
+                </div>
+                <div class="footer-column" style="padding-top: 60px;">
+                    <a href="#">HBO Max™</a>
+                    <a href="#">Cinemax</a>
+                    <a href="#">Showtime</a>
+                    <a href="#">STARZ</a>
+                </div>
+                <div class="footer-column" style="padding-top: 60px;">
+                    <a href="#">Hulu, Disney+, and ESPN+</a>
+                    <a href="#">Disney bundle with Hulu (No Ads)</a>
+                    <a href="#">Disney bundle with Hulu + Live TV</a>
+                    <a href="#">Student Discount</a>
+                </div>
+                <div class="footer-column">
+                    <h4>HELP</h4>
+                    <a href="#">Account & Biling</a>
+                    <a href="#">Plans & Pricing</a>
+                    <a href="#">Supported Devices</a>
+                    <a href="#">Accessibility</a>
+                </div>
+                <div class="footer-column">
+                    <h4>ABOUT US</h4>
+                    <a href="#">Press</a>
+                    <a href="#">Jobs</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+            <div class="footer-icons">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-youtube"></i>
+                <i class="fab fa-instagram"></i>
+            </div>
+            <div class="footer-terms">
+                <p>© 2021 Hulu, LLC</p>
+                <p>About Ads</p>
+                <p>Terms of Use</p>
+                <p>Privacy Policy</p>
+                <p>Do Not Sell My Personal Information</p>
+                <p>Your California Privacy Rights</p>
+                <p>TV Parental Guidelines</p>
+            </div>
+            <p style="text-align: left; font-size: 12px;">Sitemap</p>
+        </footer>
+        
+        <script type="text/javascript" src="app.js"></script>
+    </body>
+</html>

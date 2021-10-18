@@ -1,0 +1,97 @@
+<!DOCTYPE html>  
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" href="favicon.ico">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+        <title>Poker</title>
+    </head>
+    <body>
+        <div class="table">
+            <img src="..\poker\images\back.jpg" alt="back" id="deck">
+
+            <div class="player0">
+                <img src="" id="player0_1">
+                <img src="" id="player0_2">
+            </div>
+            <div id="player0_money">1000</div>
+            <div class="board-cards">
+                <img src="" id="board1">
+                <img src="" id="board2">
+                <img src="" id="board3">
+                <img src="" id="board4">
+                <img src="" id="board5">
+            </div>
+            <div id="currentPot">0</div>
+
+            <div class="player1">
+                <img src="" id="player1_1">
+                <img src="" id="player1_2">
+            </div>
+            <div id="player1-description">
+                <div>Player 1</div>
+                <div id="player1_money">1000</div>
+                <div id="player1_action"></div>
+            </div>
+
+            <div class="player2">
+                <img src="" id="player2_1">
+                <img src="" id="player2_2">
+            </div>
+            <div id="player2-description">
+                <div>Player 2</div>
+                <div id="player2_money">1000</div>
+                <div id="player2_action"></div>
+            </div>
+
+            <div class="player3">
+                <img src="" id="player3_1">
+                <img src="" id="player3_2">
+            </div>
+            <div id="player3-description">
+                <div>Player 3</div>
+                <div id="player3_money">1000</div>
+                <div id="player3_action"></div>
+            </div>
+
+            <div class="player4">
+                <img src="" id="player4_1">
+                <img src="" id="player4_2">
+            </div>
+            <div id="player4-description">
+                <div>Player 4</div>
+                <div id="player4_money">1000</div>
+                <div id="player4_action"></div>
+            </div>
+
+            <div class="player5">
+                <img src="" id="player5_1">
+                <img src="" id="player5_2">
+            </div>
+            <div id="player5-description">
+                <div>Player 5</div>
+                <div id="player5_money">1000</div>
+                <div id="player5_action"></div>
+            </div>
+
+        </div>
+        <div class="moves">
+            <button id="check">CHECK</button>
+            <button id="call">CALL</button>
+            <button id="bet">BET</button>
+            <button id="raise">RAISE</button>
+            <button id="fold">FOLD</button>
+        </div>
+        <div class="score">
+            <p>The best combination of cards you have is: </p>
+            <p id="combination"></p>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="app.js"></script>
+    </body>
+</html>

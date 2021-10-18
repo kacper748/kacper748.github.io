@@ -1,0 +1,701 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+    font-family: "Helvetica", sans-serif;
+    background-color: black;
+    margin: auto;
+    color: white;
+    overflow-x: hidden;
+}
+
+.hero {
+    margin-top: 0;
+    height: 700px;
+    background: 
+        url(../mimic_hulu/images/header.jpg)
+        center / cover;
+    position: relative;
+}
+
+#login {
+    padding-top: 30px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+h5 {
+    color: #00ED82;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 600;
+    margin: auto;
+    padding: 140px 20px 20px 20px;
+}
+
+[alt="logo"] {
+    width: 20%;
+    height: auto;
+}
+
+#trial {
+    text-transform: uppercase;
+    color: black;
+    background-color: white;
+    font-weight: 750;
+    font-size: 15px;
+    border-style: none;
+    border-radius: 8px;
+    padding: 20px 35px;
+    margin-top: 10px;
+}
+
+.semi-transparent {
+    padding-top: 10px;
+    font-size: 10px;
+    opacity: 0.6;
+}
+
+.hero-bar {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    height: 120px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+}
+
+[alt="logos"] {
+    height: 70%;
+    width: auto;
+    margin: 20px;
+}
+
+.middle {
+    text-align: left;
+}
+
+.hero-bar h5 {
+    margin-top: 20px;
+    padding: 5px 0;
+}
+
+.button {
+    display: flex;
+    margin-left: auto;
+    position: relative;
+}
+
+#bundle {
+    height: 50%;
+    text-transform: uppercase;
+    background: transparent;
+    font-weight: 750;
+    font-size: 15px;
+    border: 1px white solid;
+    border-radius: 8px;
+    padding: 20px 40px;
+    margin-top: 40px;
+    margin-right: 50px;
+    color: white;
+}
+
+.button p {
+    text-decoration: underline;
+    font-size:10px;
+    color:lightgrey;
+    position: absolute;
+    bottom: 0px;
+    left: 35%;
+    top: 80%;
+}
+
+.shows {
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 200px;
+    position: relative;
+}
+
+.types h5 {
+    margin-top: 80px;
+    margin-bottom: 0px;
+    padding: 0;
+}
+
+h1 {
+    font-size: 60px;
+    font-weight: 800;
+    margin: auto;
+    letter-spacing: -1px;
+    word-spacing: -5px;
+}
+
+.shows-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.shows-card {
+    width: 300px;
+    height: 450px;
+    text-align: left;
+}
+
+.shows-card p {
+    margin: 20px 0 0 20px;
+}
+
+.shows-card h2 {
+    margin: 0 0 0 20px;
+}
+
+#card1 {
+    position: relative;
+}
+
+#card1::after {
+    background: url(../mimic_hulu/images/cover-1.jpg);
+    content: "";
+    opacity: 0.6;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+}
+
+#card2 {
+    position: relative;
+}
+
+#card2::after {
+    background: url(../mimic_hulu/images/cover-2.jpg);
+    content: "";
+    opacity: 0.6;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+}
+
+#card3 {
+    position: relative;
+}
+
+#card3::after {
+    background: url(../mimic_hulu/images/cover-3.jpg);
+    content: "";
+    opacity: 0.6;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+}
+
+#card4 {
+    position: relative;
+}
+
+#card4::after {
+    background: url(../mimic_hulu/images/cover-4.jpg);
+    content: "";
+    opacity: 0.6;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+}
+
+.shows p {
+    font-size: 10px;
+    text-align: right;
+    margin-right: 60px;
+}
+
+.limited {
+    height: 800px;
+    background-color: rgb(0, 20, 20);
+    padding: 50px 25px;
+}
+
+.border {
+    height: 100%;
+    border: 3px solid #00ED82;
+    border-radius: 8px;
+}
+
+.border h3 {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+    width: 800px;
+    margin-top: 30px;
+    line-height: 30px;
+    font-size: 25px;
+    font-weight: normal;
+}
+
+.border p {
+    margin-top: 0;
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 850px; 
+    line-height: 35px;
+}
+
+.arrow {
+    font-size: 25px;
+    animation: down 2s linear infinite;
+}
+
+@keyframes down {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.live-sports {
+    height: 700px;
+    padding-top: 180px;
+    background: url(../mimic_hulu/images/live-sports.jpg)
+    center / cover;
+}
+
+.sports-text {
+    margin-left: 150px;
+    text-align: left;
+}
+
+.sports-bar {
+    transition: transform 5.4s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+    margin-bottom: 40px;
+}
+
+.sports-bar span {
+    display: inline-block;
+    margin-right: 20px;
+    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: 8px;
+    padding-bottom: 20px;
+
+}
+
+#bar1 {
+    border-bottom: 4px solid white;
+    transition: border-bottom 0.4s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+}
+
+#bar2, #bar3 {
+    transition: border-bottom 0.4s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+}
+
+.sports-bar span:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.sports-description {
+    width: 460px;
+    line-height: 30px;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.sports-images {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    margin-right: 20px;
+    margin-bottom: 35px;
+}
+
+.sports-images img {
+    width: 40px;
+    height: 30px;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    margin: auto;
+}
+
+.plans {
+    height: 1200px;
+    background: white;
+    color: black;
+    padding-bottom: 50px;
+}
+
+.plans-head {
+    display: flex;
+    flex-direction: row;
+    margin-left: 180px;
+    padding-top: 50px;
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
+.plans-title {
+    text-align: left;
+    width: 280px;
+    margin-right: 120px;
+}
+
+.plans-title h4 {
+    margin: 0px;
+    font-size: 30px;
+}
+
+.plans-types {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+.plans-selection {
+    width: 200px;
+    padding-bottom: 10px;
+}
+
+#greySelection {
+    background-color: #f2f2f2;
+}
+
+.plans-selection h4 {
+    font-weight: 800;
+}
+
+.plans-selection p {
+    color: gray;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.banner {
+    color: white !important;
+    background-color: #67728A; 
+    border-radius: 15px;  
+    width: 70%;
+    height: 25px;
+    align-items: center;
+    font-size: 11px !important;
+    margin-left: 30px;
+    padding-top: 6px;
+}
+
+.plans-selection button {
+    color: white;
+    background-color: black;
+    border-radius: 5%;
+    width: 90%;
+    height: 50px;
+}
+
+.plans-table {
+    height: 400px;
+    margin-left: 180px;
+}
+
+table {
+    table-layout: fixed;
+    width: 1000px;
+}
+
+td:nth-child(3) {
+    background-color: #f2f2f2;
+}
+
+th {
+    text-align: left;
+    width: 400px;
+    padding: 20px 0;
+    font-weight: normal;
+}
+
+th, td {
+    border-top: 1px solid lightgray;
+}
+
+.plans-bottom {
+    font-size: 9px;
+    text-align: left;
+    padding-bottom: 50px;
+    margin-right: 160px;
+    border-bottom: 1px solid lightgray;
+    width: 100%;
+}
+
+#addOns:hover, #addOns2:hover {
+    cursor: pointer;
+}
+
+#hiddenTable {
+    display: none;
+}
+
+footer {
+    height: 550px;
+    background: #f2f2f2;
+    color: gray;
+    padding-left: 140px;
+}
+
+.footer-links {
+    display: flex;
+    border-bottom: 1px solid lightgray;
+    margin-right: 160px;
+    padding-bottom: 50px;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-top: 50px;
+    margin-right: 50px;
+    width: 200px;
+}
+
+.footer-column a {
+    text-decoration: none;
+    color: gray;
+    padding-bottom: 10px;
+    font-size: 14px;
+}
+
+.footer-column a:hover {
+    color: lightblue;
+}
+
+.footer-icons {
+    padding-top: 50px;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-icons i {
+    font-size: 22px;
+    padding-right: 40px;
+}
+
+.footer-terms {
+    padding-top: 50px;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-terms p {
+    font-size: 12px;
+    padding-right: 40px;
+}
+
+@media only screen and (max-width: 600px) {
+    .hero-bar {
+        flex-direction: column;
+        height: 240px;
+        align-items: center;
+    }
+
+    [alt="logos"] {
+        height: 20%;
+        width: 50%;
+        margin-top: 20px;
+    }
+
+    .hero-bar h5, .hero-bar h3, .hero-bar p {
+        text-align: center;
+        font-size: 12px;
+        margin: 5px;
+    }
+
+    .button {
+        position: initial;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #bundle {
+        text-align: center;
+        padding: 20px 40px 30px 40px;
+        margin: 0;
+        color: white;
+    }
+
+    .button p {
+        bottom: inherit; 
+        left: inherit; 
+        top: inherit; 
+        position: inherit;
+    }
+
+    .shows {
+        height: auto;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .shows p {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .shows-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .limited {
+        height: auto;
+        padding: 25px;
+    }
+
+    .border h5 {
+        padding-top: 50px;
+    }
+
+    .border p {
+        width: auto;
+        line-height: 15px;
+        padding: 10px;
+    }
+
+    .border h3 {
+        width: auto;
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .arrow {
+        padding-bottom: 20px;
+    }
+
+    .live-sports {
+        height: 700px;
+        padding-top: 30px;
+        background: url(../mimic_hulu/images/live-sports-small.jpg)
+        center / cover;
+    }
+    
+    .sports-text {
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px;
+        text-align: center;
+    }
+
+    #sportsTitle {
+        font-size: 30px;
+    }
+
+    #sportsDescription {
+        font-size: 16px;
+        line-height: 20px;
+        padding-bottom: 50px;
+    }
+
+    #line {
+        text-align: left;
+        margin-top: 26px;
+        margin-left: 80px;
+    }
+
+    .sports-bar {
+        margin-left: 25px;
+    }
+
+    .sports-bar span {
+        display: inline-block;
+        margin-right: 20px;
+        font-weight: bold;
+        font-size: 12px;
+        margin-bottom: 8px;
+    }
+
+    .plans-head {
+        flex-direction: column;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .plans {
+        height: 1600px;
+    }
+
+    .plans-title {
+        text-align: center;
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .plans-table {
+        margin-left: 0px;
+    }
+    
+    table {
+        width: 100%;
+        margin: 0;
+    }
+
+    td:nth-child(3) {
+        background-color: white;
+    }
+
+    #greySelection {
+        background-color: white;
+    }
+
+    tr > * {
+        display: block;
+    }
+
+    tr > td {
+        display: inline-block;
+        width: 33%;
+        border-top: none;
+    }
+
+    tr > th {
+        text-align: center;
+        width: 100%;
+    }
+    
+    footer {
+        height: 750px;
+        padding-left: 20px;
+    }
+
+    .footer-column a, .footer-column h4 {
+        font-size: 10px;
+    }
+}
