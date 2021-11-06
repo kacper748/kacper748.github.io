@@ -232,6 +232,8 @@ function playNextPhase() {
         currentPhase++;
     }
     else if (currentPhase == 3) {
+        $(".hidden").css("display", "none");
+        $(".player-cards").css("display", "initial");
         checkForTheWinner();
     }
 }
@@ -778,6 +780,10 @@ var humanPlayer:number = 1; // To check if the human player is still in game
 
 function playerChecks(targetPlayer:any) {
 
+    if (targetPlayer.playerNumber > 0) {
+        $("#player"+ targetPlayer.playerNumber +"-description").css("animation", "none");
+    }
+
     targetPlayer.check = true;
     $("#player"+ targetPlayer.playerNumber +"_action").text("Check");
 
@@ -790,6 +796,10 @@ function playerChecks(targetPlayer:any) {
 }
 
 function playerCalls(targetPlayer:any) {
+
+    if (targetPlayer.playerNumber > 0) {
+        $("#player"+ targetPlayer.playerNumber +"-description").css("animation", "none");
+    }
 
     $("#player"+ targetPlayer.playerNumber +"_action").text("Call");
 
@@ -814,6 +824,10 @@ function playerCalls(targetPlayer:any) {
 
 function playerBets(targetPlayer:any) {
 
+    if (targetPlayer.playerNumber > 0) {
+        $("#player"+ targetPlayer.playerNumber +"-description").css("animation", "none");
+    }
+
     $("#player"+ targetPlayer.playerNumber +"_action").text("Bet");
 
     raiseValue += 100;
@@ -834,6 +848,10 @@ function playerBets(targetPlayer:any) {
 }
 
 function playerRaises(targetPlayer:any) {
+
+    if (targetPlayer.playerNumber > 0) {
+        $("#player"+ targetPlayer.playerNumber +"-description").css("animation", "none");
+    }
 
     $("#player"+ targetPlayer.playerNumber +"_action").text("Raise");
 
@@ -871,6 +889,7 @@ function playerFolds(targetPlayer:any, playerNumberInArray:number) {
     var splicingDelay = (ALL_PLAYERS.length - playerNumberInArray) * 3000;
     setTimeout (() => {for (let i = 0; i < ALL_PLAYERS.length; i++) {
         if (targetPlayer == ALL_PLAYERS[i]) {
+            $(".folded" + targetPlayer.playerNumber).css("display", "initial");
             ALL_PLAYERS.splice(i, 1);
         }
     }}, splicingDelay);
@@ -910,12 +929,19 @@ function testIfEverybodyChecks() {
 
 function computerPlayersMakeMoves() {
     var randomDigit;
-    var delay = 3000;
+    var delayForTheRotation = 0;
+    var delayForTheMove = 3000;
     for (let i = humanPlayer; i < ALL_PLAYERS.length; i++) {
 
-        
-        setTimeout (() => {nextComputerMove()}, delay);
-        delay += 3000;
+        setTimeout (() => {loadingRotation()}, delayForTheRotation);
+        setTimeout (() => {nextComputerMove()}, delayForTheMove);
+        delayForTheRotation = delayForTheMove;
+        delayForTheMove += 3000;
+
+
+        function loadingRotation() {
+            $("#player"+ ALL_PLAYERS[i].playerNumber +"-description").css("animation", "rotation 2s linear");
+        }
 
         function nextComputerMove() {
             randomDigit = Math.floor(Math.random() * 4);

@@ -29,6 +29,22 @@ body {
     top: 35%;
 }
 
+.player-cards {
+    display: none;
+}
+
+.hidden {
+    display: initial;
+}
+
+.folded1, .folded2, .folded3, .folded4, .folded5 {
+    display: none;
+    position: absolute;
+    left: 0%;
+    top: -5%;
+    font-size: 60px;
+}
+
 .player0 {
     position: absolute;
     left: 45%;
@@ -145,6 +161,15 @@ body {
     padding: 10px;
     text-align: center;
     border-radius: 40%;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .score {

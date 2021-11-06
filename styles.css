@@ -5,6 +5,8 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: auto;
     color: white;
+    width: 100vw;
+    overflow-x: hidden;
 }
 
 section {
@@ -20,6 +22,24 @@ p {
 
 h2 {
     text-align: center;
+}
+
+.name {
+    margin: auto;
+    margin-top: 50px;
+    width: 400px;
+    height: 76px;
+    overflow: hidden;
+    animation: textTyping 2s linear;
+}
+
+@keyframes textTyping {
+    0% {
+        width: 0px;
+    }
+    100% {
+        width: 400px;
+    }
 }
 
 .hero {
@@ -213,11 +233,36 @@ h1 {
         display: flex;
         flex-wrap: wrap;
     }
+
     h1 {
         font-size: 30px;
     }
+
+    nav ul {
+        float: right;
+    }
+
     nav ul li a {
         padding: 5px;
-        font-size: 12px;
+        font-size: 10px;
+    }
+
+    .css-image {
+        margin-top: -10px;
+        margin-left: 0px;
+        font-size: 20px;
+    }
+
+    .side-bar {
+        top: 30px
+    }
+
+    .side-bar i {
+        font-size: 20px;
+    }
+
+    .popup-email {
+        font-size: 10px;
+        margin-left: -40px;
     }
 }

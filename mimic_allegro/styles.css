@@ -7,6 +7,8 @@
 
 * {
     box-sizing: border-box;
+    margin:0;
+    padding: 0;
 }
 
 body {
@@ -15,6 +17,8 @@ body {
     background-color: var(--borderColor);
     overflow-x: hidden;
 }
+
+/*------------ NAV BAR -----------*/
     
 nav {
     display: flex;
@@ -29,7 +33,7 @@ nav form {
 
 nav form input {
     padding: 10px;
-    width: 400px;
+    width: 30vw;
     margin-right: -10px;
     border: 3px solid var(--borderColor);
 }
@@ -86,6 +90,8 @@ nav i {
     font-size: 25px;
 }
 
+/*------------ MAIN -----------*/
+
 .main-container {
     padding-top: 20px;
     display: grid;
@@ -101,6 +107,8 @@ nav i {
 .main-container > div {
     background-color: white;
 }
+
+/*------------ LEFT CATEGORIES -----------*/
 
 .left-categories {
     grid-area: leftCategories;
@@ -177,6 +185,8 @@ nav i {
     cursor: pointer;
 }
 
+/*------------ POPUPS -----------*/
+
 .popups {
     grid-area: popups;
     display: flex;
@@ -197,7 +207,7 @@ nav i {
 }
 
 .popup-types div {
-    width: 20%;
+    width: 20vw;
     text-align: center;
     padding-top: 20px;
 }
@@ -205,6 +215,8 @@ nav i {
 #popup1 {
     border-top: 2px solid var(--mainColor);
 }
+
+/*------------ TO SEE BAR -----------*/
 
 .to-see {
     grid-area: toSee;
@@ -239,6 +251,8 @@ nav i {
     border: 1px solid grey;
 }
 
+/*------------ LOG IN -----------*/
+
 .log-in {
     grid-area: logIn;
     display: flex;
@@ -264,6 +278,8 @@ nav i {
     padding: 12px 0;
     border: 1px solid var(--borderColor);
 }
+
+/*------------ FOR YOU -----------*/
 
 .for-you {
     grid-area: forYou;
@@ -314,8 +330,11 @@ nav i {
     text-align: center;
 }
 
+/*------------ LIMITED OFFERS -----------*/
+
 .limited-offers {
     grid-area: limitedOffers;
+    width: 100vw;
     display: flex;
     flex-direction: row;
     background-color: var(--thirdMain) !important;
@@ -420,4 +439,73 @@ nav i {
     color: white;
     padding: 12px;
     border: none;
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        font-size: 12px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav img {
+        width: 30vw;
+    }
+
+    .main-container {
+        grid-template: 
+        'popups popups popups popups' 
+        'toSee toSee toSee toSee'
+        'limitedOffers limitedOffers limitedOffers limitedOffers'
+        'limitedOffers limitedOffers limitedOffers limitedOffers'
+        'leftCategories leftCategories leftCategories leftCategories'
+        'leftCategories leftCategories leftCategories leftCategories'
+        'logIn logIn logIn logIn'
+        'forYou forYou forYou forYou';
+    }
+
+    .left-categories, .to-see, .log-in, .for-you, #popupPlace {
+        width: 100vw;
+    }
+
+    .limited-offers {
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+    }
+    
+    .limited-offers-card p {
+        font-size: 12px;
+    }
+
+    .limited-offers-card-left {
+        text-align: center;
+    }
+
+    .limited-offers-card-left img {
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .limited-offers-row-cards {
+        width: 400%;
+    }
+
+    nav form input {
+        width: 200px;
+        text-align: center;
+    }
+
+    nav form select {
+        width: 200px;
+        text-align: center;
+    }
+    
+    nav form button {
+        width: 200px;
+    }
 }

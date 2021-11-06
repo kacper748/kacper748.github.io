@@ -1,20 +1,38 @@
-"use strict";
-class Card {
-    constructor(url, number) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var Card = /** @class */ (function () {
+    function Card(url, number) {
         this.url = url;
         this.number = number;
     }
-}
+    return Card;
+}());
 // Create all clubs
-class Club extends Card {
-    constructor(url, number) {
-        super(url, number);
-        this.type = "clubs";
+var Club = /** @class */ (function (_super) {
+    __extends(Club, _super);
+    function Club(url, number) {
+        var _this = _super.call(this, url, number) || this;
+        _this.type = "clubs";
+        return _this;
     }
-}
-Club.numberOfCards = 13;
-const ALL_CLUBS = [];
-const ALL_CLUBS_URLS = [
+    Club.numberOfCards = 13;
+    return Club;
+}(Card));
+var ALL_CLUBS = [];
+var ALL_CLUBS_URLS = [
     "..\\poker\\images\\clubs2.jpg",
     "..\\poker\\images\\clubs3.jpg",
     "..\\poker\\images\\clubs4.jpg",
@@ -29,19 +47,22 @@ const ALL_CLUBS_URLS = [
     "..\\poker\\images\\clubs13.jpg",
     "..\\poker\\images\\clubsA.jpg",
 ];
-for (let i = 0; i < Club.numberOfCards; i++) {
+for (var i = 0; i < Club.numberOfCards; i++) {
     ALL_CLUBS[i] = new Club(ALL_CLUBS_URLS[i], (i + 2));
 }
 // Create all diamonds
-class Diamond extends Card {
-    constructor(url, number) {
-        super(url, number);
-        this.type = "diamonds";
+var Diamond = /** @class */ (function (_super) {
+    __extends(Diamond, _super);
+    function Diamond(url, number) {
+        var _this = _super.call(this, url, number) || this;
+        _this.type = "diamonds";
+        return _this;
     }
-}
-Diamond.numberOfCards = 13;
-const ALL_DIAMONDS = [];
-const ALL_DIAMONDS_URLS = [
+    Diamond.numberOfCards = 13;
+    return Diamond;
+}(Card));
+var ALL_DIAMONDS = [];
+var ALL_DIAMONDS_URLS = [
     "..\\poker\\images\\diamonds2.jpg",
     "..\\poker\\images\\diamonds3.jpg",
     "..\\poker\\images\\diamonds4.jpg",
@@ -56,19 +77,22 @@ const ALL_DIAMONDS_URLS = [
     "..\\poker\\images\\diamonds13.jpg",
     "..\\poker\\images\\diamondsA.jpg"
 ];
-for (let i = 0; i < Diamond.numberOfCards; i++) {
+for (var i = 0; i < Diamond.numberOfCards; i++) {
     ALL_DIAMONDS[i] = new Diamond(ALL_DIAMONDS_URLS[i], (i + 2));
 }
 // Create all hearts
-class Heart extends Card {
-    constructor(url, number) {
-        super(url, number);
-        this.type = "hearts";
+var Heart = /** @class */ (function (_super) {
+    __extends(Heart, _super);
+    function Heart(url, number) {
+        var _this = _super.call(this, url, number) || this;
+        _this.type = "hearts";
+        return _this;
     }
-}
-Heart.numberOfCards = 13;
-const ALL_HEARTS = [];
-const ALL_HEARTS_URLS = [
+    Heart.numberOfCards = 13;
+    return Heart;
+}(Card));
+var ALL_HEARTS = [];
+var ALL_HEARTS_URLS = [
     "..\\poker\\images\\hearts2.jpg",
     "..\\poker\\images\\hearts3.jpg",
     "..\\poker\\images\\hearts4.jpg",
@@ -83,20 +107,23 @@ const ALL_HEARTS_URLS = [
     "..\\poker\\images\\hearts13.jpg",
     "..\\poker\\images\\heartsA.jpg"
 ];
-for (let i = 0; i < Heart.numberOfCards; i++) {
+for (var i = 0; i < Heart.numberOfCards; i++) {
     ALL_HEARTS[i] = new Heart(ALL_HEARTS_URLS[i], (i + 2));
 }
 // Create all spades
-class Spade extends Card {
-    constructor(url, number) {
-        super(url, number);
-        this.type = "spades";
+var Spade = /** @class */ (function (_super) {
+    __extends(Spade, _super);
+    function Spade(url, number) {
+        var _this = _super.call(this, url, number) || this;
+        _this.type = "spades";
+        return _this;
     }
-}
-Spade.numberOfCards = 13;
-let numberOfSpades = 13;
-const ALL_SPADES = [];
-const ALL_SPADES_URLS = [
+    Spade.numberOfCards = 13;
+    return Spade;
+}(Card));
+var numberOfSpades = 13;
+var ALL_SPADES = [];
+var ALL_SPADES_URLS = [
     "..\\poker\\images\\spades2.jpg",
     "..\\poker\\images\\spades3.jpg",
     "..\\poker\\images\\spades4.jpg",
@@ -111,14 +138,14 @@ const ALL_SPADES_URLS = [
     "..\\poker\\images\\spades13.jpg",
     "..\\poker\\images\\spadesA.jpg"
 ];
-for (let i = 0; i < Spade.numberOfCards; i++) {
+for (var i = 0; i < Spade.numberOfCards; i++) {
     ALL_SPADES[i] = new Spade(ALL_SPADES_URLS[i], (i + 2));
 }
 // Create a deck of cards
-const DECK_OF_CARDS = [ALL_CLUBS, ALL_DIAMONDS, ALL_HEARTS, ALL_SPADES];
-const CARD_TYPES = [Club, Diamond, Heart, Spade];
-class Player {
-    constructor(playerNumber) {
+var DECK_OF_CARDS = [ALL_CLUBS, ALL_DIAMONDS, ALL_HEARTS, ALL_SPADES];
+var CARD_TYPES = [Club, Diamond, Heart, Spade];
+var Player = /** @class */ (function () {
+    function Player(playerNumber) {
         this.hand = [];
         this.money = 1000;
         this.raise = 0;
@@ -144,22 +171,23 @@ class Player {
         this.powerOfCards = 0;
         this.playerNumber = playerNumber;
     }
-}
+    return Player;
+}());
 var winner;
 var winner2;
-const player = new Player(0);
-const player2 = new Player(1);
-const player3 = new Player(2);
-const player4 = new Player(3);
-const player5 = new Player(4);
-const player6 = new Player(5);
-const ALL_PLAYERS = [player, player2, player3, player4, player5, player6];
+var player = new Player(0);
+var player2 = new Player(1);
+var player3 = new Player(2);
+var player4 = new Player(3);
+var player5 = new Player(4);
+var player6 = new Player(5);
+var ALL_PLAYERS = [player, player2, player3, player4, player5, player6];
 var currentPhase = 0;
 var currentType;
 var currentNumber;
-const BOARD = [];
+var BOARD = [];
 function startTheGame() {
-    for (let i = 0; i < ALL_PLAYERS.length; i++) {
+    for (var i = 0; i < ALL_PLAYERS.length; i++) {
         dealPlayer(ALL_PLAYERS[i], i);
     }
     checkForTheCombinations();
@@ -167,13 +195,13 @@ function startTheGame() {
 function playNextPhase() {
     raiseValue = 0;
     bet = false;
-    for (let i = 0; i < ALL_PLAYERS.length; i++) {
+    for (var i = 0; i < ALL_PLAYERS.length; i++) {
         ALL_PLAYERS[i].raise = 0;
     }
-    for (let i = 0; i < ALL_PLAYERS.length; i++) {
+    for (var i = 0; i < ALL_PLAYERS.length; i++) {
         ALL_PLAYERS[i].check = false;
     }
-    for (let i = 0; i < ALL_PLAYERS.length; i++) {
+    for (var i = 0; i < ALL_PLAYERS.length; i++) {
         $("#player" + ALL_PLAYERS[i].playerNumber + "_action").text("");
     }
     if (currentPhase == 0) {
@@ -192,6 +220,8 @@ function playNextPhase() {
         currentPhase++;
     }
     else if (currentPhase == 3) {
+        $(".hidden").css("display", "none");
+        $(".player-cards").css("display", "initial");
         checkForTheWinner();
     }
 }
@@ -242,7 +272,7 @@ function getThatCardOutOfTheDeck() {
     CARD_TYPES[currentType].numberOfCards -= 1;
 }
 function checkForTheCombinations() {
-    for (let i = 0; i < ALL_PLAYERS.length; i++) {
+    for (var i = 0; i < ALL_PLAYERS.length; i++) {
         collectAllCards(ALL_PLAYERS[i]);
         checkForTheHighestCard(ALL_PLAYERS[i]);
         checkForTheRepeatedNumbers(ALL_PLAYERS[i]);
@@ -279,15 +309,15 @@ function collectAllCards(targetPlayer) {
     }
 }
 function checkForTheHighestCard(targetPlayer) {
-    for (let i = 0; i < targetPlayer.allCards.length; i++) {
+    for (var i = 0; i < targetPlayer.allCards.length; i++) {
         if (targetPlayer.allCards[i]["number"] > targetPlayer.highestCard) {
             targetPlayer.highestCard = targetPlayer.allCards[i]["number"];
         }
     }
 }
 function checkForTheRepeatedNumbers(targetPlayer) {
-    for (let i = 0; i < targetPlayer.allCards.length - 1; i++) {
-        for (let j = i + 1; j < targetPlayer.allCards.length; j++) {
+    for (var i = 0; i < targetPlayer.allCards.length - 1; i++) {
+        for (var j = i + 1; j < targetPlayer.allCards.length; j++) {
             if (targetPlayer.allCards[i]["number"] == targetPlayer.allCards[j]["number"]) {
                 if (!targetPlayer.allRepeatedCards.includes(targetPlayer.allCards[i])) {
                     targetPlayer.allRepeatedCards.push(targetPlayer.allCards[i]);
@@ -304,21 +334,21 @@ function checkForTheRepeatedNumbers(targetPlayer) {
 function checkForThePairs(targetPlayer) {
     if (targetPlayer.allRepeatedNumbers.length > 0) {
         targetPlayer.allRepeatedNumbers.sort(function (a, b) { return b - a; });
-        if (targetPlayer.allRepeatedNumbers.length == 2 && targetPlayer.allRepeatedNumbers.every((val, k, arr) => val === arr[0])) {
+        if (targetPlayer.allRepeatedNumbers.length == 2 && targetPlayer.allRepeatedNumbers.every(function (val, k, arr) { return val === arr[0]; })) {
             targetPlayer.pair = targetPlayer.allRepeatedNumbers[0];
         }
-        else if (targetPlayer.allRepeatedNumbers.length == 3 && targetPlayer.allRepeatedNumbers.every((val, k, arr) => val === arr[0])) {
+        else if (targetPlayer.allRepeatedNumbers.length == 3 && targetPlayer.allRepeatedNumbers.every(function (val, k, arr) { return val === arr[0]; })) {
             targetPlayer.threeOfAKind = targetPlayer.allRepeatedNumbers[0];
         }
-        else if (targetPlayer.allRepeatedNumbers.length == 4 && targetPlayer.allRepeatedNumbers.every((val, k, arr) => val === arr[0])) {
+        else if (targetPlayer.allRepeatedNumbers.length == 4 && targetPlayer.allRepeatedNumbers.every(function (val, k, arr) { return val === arr[0]; })) {
             targetPlayer.fourOfAKind = targetPlayer.allRepeatedNumbers[0];
         }
         else {
-            for (let i = 0; i < targetPlayer.allRepeatedNumbers.length - 1; i++) {
+            for (var i = 0; i < targetPlayer.allRepeatedNumbers.length - 1; i++) {
                 if (targetPlayer.allRepeatedNumbers[i] != targetPlayer.allRepeatedNumbers[i + 1]) {
                     targetPlayer.firstRepeatedNumber = targetPlayer.allRepeatedNumbers.slice(0, i + 1);
                     targetPlayer.secondRepeatedNumber = targetPlayer.allRepeatedNumbers.slice(i + 1, targetPlayer.allRepeatedNumbers.length);
-                    for (let j = 0; j < targetPlayer.secondRepeatedNumber.length; j++) {
+                    for (var j = 0; j < targetPlayer.secondRepeatedNumber.length; j++) {
                         if (targetPlayer.secondRepeatedNumber[j] != targetPlayer.secondRepeatedNumber[j + 1]) {
                             targetPlayer.thirdRepeatedNumber = targetPlayer.secondRepeatedNumber.slice(j + 1, targetPlayer.secondRepeatedNumber.length);
                             targetPlayer.secondRepeatedNumber = targetPlayer.secondRepeatedNumber.slice(0, j + 1);
@@ -344,15 +374,15 @@ function checkForThePairs(targetPlayer) {
     }
 }
 function checkForTheStraight(targetPlayer) {
-    for (let i = 0; i < targetPlayer.allNumbers.length; i++) {
+    for (var i = 0; i < targetPlayer.allNumbers.length; i++) {
         if (targetPlayer.allNumbers[i] == 14) {
             targetPlayer.allNumbers[i] = 1;
         }
     }
     targetPlayer.allNumbers.sort(function (a, b) { return a - b; });
-    var uniqueNumbers = targetPlayer.allNumbers.filter((v, i) => targetPlayer.allNumbers.indexOf(v) == i);
+    var uniqueNumbers = targetPlayer.allNumbers.filter(function (v, i) { return targetPlayer.allNumbers.indexOf(v) == i; });
     var counterOfStraight = 0;
-    for (let j = 0; j < uniqueNumbers.length - 1; j++) {
+    for (var j = 0; j < uniqueNumbers.length - 1; j++) {
         if (uniqueNumbers[j] == uniqueNumbers[j + 1] - 1) {
             counterOfStraight++;
             if (counterOfStraight >= 4) {
@@ -363,15 +393,15 @@ function checkForTheStraight(targetPlayer) {
             counterOfStraight = 0;
         }
     }
-    for (let k = 0; k < targetPlayer.allNumbers.length; k++) {
+    for (var k = 0; k < targetPlayer.allNumbers.length; k++) {
         if (targetPlayer.allNumbers[k] == 1) {
             targetPlayer.allNumbers[k] = 14;
         }
     }
     targetPlayer.allNumbers.sort(function (a, b) { return a - b; });
-    var uniqueNumbers = targetPlayer.allNumbers.filter((v, i) => targetPlayer.allNumbers.indexOf(v) == i);
+    var uniqueNumbers = targetPlayer.allNumbers.filter(function (v, i) { return targetPlayer.allNumbers.indexOf(v) == i; });
     var counterOfStraight = 0;
-    for (let l = 0; l < uniqueNumbers.length - 1; l++) {
+    for (var l = 0; l < uniqueNumbers.length - 1; l++) {
         if (uniqueNumbers[l] == uniqueNumbers[l + 1] - 1) {
             counterOfStraight++;
             if (counterOfStraight >= 4) {
@@ -388,7 +418,7 @@ function checkForTheFlush(targetPlayer) {
     var counterOfDiamondFlush = [];
     var counterOfHeartFlush = [];
     var counterOfClubFlush = [];
-    for (let i = 0; i < targetPlayer.allCards; i++) {
+    for (var i = 0; i < targetPlayer.allCards; i++) {
         if (targetPlayer.allCards[i]["type"] == "spades") {
             counterOfSpadeFlush.push(targetPlayer.allCards[i]);
             if (counterOfSpadeFlush.length == 4) {
@@ -426,7 +456,7 @@ function checkForTheFlush(targetPlayer) {
 function checkForTheStraightFlush(targetPlayer) {
     if (targetPlayer.flushHighestNumber > 0 && targetPlayer.straight > 0) {
         var counterOfStraightFlush = 0;
-        for (let i = 0; i < 5; i++) {
+        for (var i = 0; i < 5; i++) {
             if (targetPlayer.cardsInFlush[i]["number"] == (targetPlayer.straight - 4 + i)) {
                 counterOfStraightFlush++;
                 if (counterOfStraightFlush == 5) {
@@ -443,7 +473,7 @@ function checkForTheRoyalFlush(targetPlayer) {
     }
 }
 function checkForTheStrongestCombination() {
-    for (let i = 0; i < ALL_PLAYERS.length; i++) {
+    for (var i = 0; i < ALL_PLAYERS.length; i++) {
         if (ALL_PLAYERS[i].royalFlush > 0) {
             ALL_PLAYERS[i].powerOfCards = 10;
         }
@@ -513,7 +543,7 @@ function displayTheBestCombinationForTheHumanPlayer() {
 }
 function checkForTheWinner() {
     var largestPower = 0;
-    for (let i = 0; i < ALL_PLAYERS.length; i++) {
+    for (var i = 0; i < ALL_PLAYERS.length; i++) {
         if (ALL_PLAYERS[i].powerOfCards > largestPower) {
             largestPower = ALL_PLAYERS[i].powerOfCards;
             winner = ALL_PLAYERS[i];
@@ -676,11 +706,11 @@ function checkForTheWinner() {
     $("#player" + winner.playerNumber + "_money").text(winner.money);
     $("#currentPot").text(currentPot);
 }
-document.getElementById("check").addEventListener("click", () => { playerChecks(player); });
-document.getElementById("call").addEventListener("click", () => { playerCalls(player); });
-document.getElementById("bet").addEventListener("click", () => { playerBets(player); });
-document.getElementById("raise").addEventListener("click", () => { playerRaises(player); });
-document.getElementById("fold").addEventListener("click", () => { playerFolds(player, 0); });
+document.getElementById("check").addEventListener("click", function () { playerChecks(player); });
+document.getElementById("call").addEventListener("click", function () { playerCalls(player); });
+document.getElementById("bet").addEventListener("click", function () { playerBets(player); });
+document.getElementById("raise").addEventListener("click", function () { playerRaises(player); });
+document.getElementById("fold").addEventListener("click", function () { playerFolds(player, 0); });
 var raiseValue = 0;
 var currentPot = 0;
 var bet;
@@ -688,6 +718,9 @@ var difference;
 var someoneFolded;
 var humanPlayer = 1; // To check if the human player is still in game
 function playerChecks(targetPlayer) {
+    if (targetPlayer.playerNumber > 0) {
+        $("#player" + targetPlayer.playerNumber + "-description").css("animation", "none");
+    }
     targetPlayer.check = true;
     $("#player" + targetPlayer.playerNumber + "_action").text("Check");
     if (testIfEverybodyChecks()) {
@@ -698,6 +731,9 @@ function playerChecks(targetPlayer) {
     }
 }
 function playerCalls(targetPlayer) {
+    if (targetPlayer.playerNumber > 0) {
+        $("#player" + targetPlayer.playerNumber + "-description").css("animation", "none");
+    }
     $("#player" + targetPlayer.playerNumber + "_action").text("Call");
     difference = raiseValue - targetPlayer.raise;
     if (difference < 0) {
@@ -716,6 +752,9 @@ function playerCalls(targetPlayer) {
     }
 }
 function playerBets(targetPlayer) {
+    if (targetPlayer.playerNumber > 0) {
+        $("#player" + targetPlayer.playerNumber + "-description").css("animation", "none");
+    }
     $("#player" + targetPlayer.playerNumber + "_action").text("Bet");
     raiseValue += 100;
     targetPlayer.raise += 100;
@@ -723,7 +762,7 @@ function playerBets(targetPlayer) {
     targetPlayer.money -= targetPlayer.raise;
     $("#player" + targetPlayer.playerNumber + "_money").text(targetPlayer.money);
     $("#currentPot").text(currentPot);
-    for (let i = 0; i < ALL_PLAYERS.length; i++) {
+    for (var i = 0; i < ALL_PLAYERS.length; i++) {
         ALL_PLAYERS[i].check = false;
     }
     targetPlayer.check = true;
@@ -733,6 +772,9 @@ function playerBets(targetPlayer) {
     }
 }
 function playerRaises(targetPlayer) {
+    if (targetPlayer.playerNumber > 0) {
+        $("#player" + targetPlayer.playerNumber + "-description").css("animation", "none");
+    }
     $("#player" + targetPlayer.playerNumber + "_action").text("Raise");
     difference = raiseValue - targetPlayer.raise + 100;
     if (difference < 0) {
@@ -747,7 +789,7 @@ function playerRaises(targetPlayer) {
     currentPot += difference;
     $("#player" + targetPlayer.playerNumber + "_money").text(targetPlayer.money);
     $("#currentPot").text(currentPot);
-    for (let i = 0; i < ALL_PLAYERS.length; i++) {
+    for (var i = 0; i < ALL_PLAYERS.length; i++) {
         ALL_PLAYERS[i].check = false;
     }
     targetPlayer.check = true;
@@ -761,16 +803,17 @@ function playerFolds(targetPlayer, playerNumberInArray) {
     someoneFolded = true;
     targetPlayer.check = true;
     var splicingDelay = (ALL_PLAYERS.length - playerNumberInArray) * 3000;
-    setTimeout(() => {
-        for (let i = 0; i < ALL_PLAYERS.length; i++) {
+    setTimeout(function () {
+        for (var i = 0; i < ALL_PLAYERS.length; i++) {
             if (targetPlayer == ALL_PLAYERS[i]) {
+                $(".folded" + targetPlayer.playerNumber).css("display", "initial");
                 ALL_PLAYERS.splice(i, 1);
             }
         }
     }, splicingDelay);
     $(".player" + targetPlayer.playerNumber).css("left", "25%");
     $(".player" + targetPlayer.playerNumber).css("top", "25%");
-    setTimeout(() => { $(".player" + targetPlayer.playerNumber).css("display", "none"); }, 2000);
+    setTimeout(function () { $(".player" + targetPlayer.playerNumber).css("display", "none"); }, 2000);
     if (ALL_PLAYERS.length == 1) {
         currentPhase = 3;
         playNextPhase();
@@ -782,14 +825,14 @@ function playerFolds(targetPlayer, playerNumberInArray) {
         humanPlayer = 0;
         someoneFolded = false;
         $(".moves").css("display", "none");
-        for (let i = currentPhase; i < 4; i++) {
+        for (var i = currentPhase; i < 4; i++) {
             computerPlayersMakeMoves();
         }
     }
 }
 function testIfEverybodyChecks() {
     var checkCounter = 0;
-    for (let i = 0; i < ALL_PLAYERS.length; i++) {
+    for (var i = 0; i < ALL_PLAYERS.length; i++) {
         if (ALL_PLAYERS[i].check == true) {
             checkCounter++;
         }
@@ -800,10 +843,16 @@ function testIfEverybodyChecks() {
 }
 function computerPlayersMakeMoves() {
     var randomDigit;
-    var delay = 3000;
-    for (let i = humanPlayer; i < ALL_PLAYERS.length; i++) {
-        setTimeout(() => { nextComputerMove(); }, delay);
-        delay += 3000;
+    var delayForTheRotation = 0;
+    var delayForTheMove = 3000;
+    var _loop_1 = function (i) {
+        setTimeout(function () { loadingRotation(); }, delayForTheRotation);
+        setTimeout(function () { nextComputerMove(); }, delayForTheMove);
+        delayForTheRotation = delayForTheMove;
+        delayForTheMove += 3000;
+        function loadingRotation() {
+            $("#player" + ALL_PLAYERS[i].playerNumber + "-description").css("animation", "rotation 2s linear");
+        }
         function nextComputerMove() {
             randomDigit = Math.floor(Math.random() * 4);
             if (ALL_PLAYERS[i].money == 0) {
@@ -920,6 +969,12 @@ function computerPlayersMakeMoves() {
                 $("#bet").css("display", "initial");
             }
         }
+        out_i_1 = i;
+    };
+    var out_i_1;
+    for (var i = humanPlayer; i < ALL_PLAYERS.length; i++) {
+        _loop_1(i);
+        i = out_i_1;
     }
 }
 startTheGame();
