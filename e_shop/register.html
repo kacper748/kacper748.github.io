@@ -7,10 +7,10 @@
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One">
         <script src="https://kit.fontawesome.com/25b693234f.js" crossorigin="anonymous"></script>
+        <script src="app.js"></script>
         <link rel="shortcut icon" href="house.ico"/>
         <title>E-COMMERCE</title>
     </head>
-
     <body>
         <!-- HEADER & CART -->
         <header>
@@ -33,24 +33,22 @@
             <a class="log" href="login.html">Log In</a>
         </nav>
 
-        <!-- CART -->
-        <div class="cart-overlay">
-            <div class="cart">
-                <span class="close-cart">
-                    <i class="fas fa-window-close"></i>
-                </span>
-                <h2>your cart</h2>
-                <div class="cart-content">
- 
-                </div>
-                <div class="cart-footer">
-                    <h3>your total : $ <span class="cart-total">0</span></h3>
-                    <button class="clear-cart banner-btn">CLEAR CART</button>
-                </div>
-            </div>
 
+        <!-- SIGN UP -->
+        <div class="center">
+            <h1>SIGN UP</h1>
+            <form method="post">
+                <div class="field">
+                    <input type="text" placeholder="Username" required>
+                </div>
+                <div class="field">
+                    <input type="text" placeholder="Password" required>
+                </div>
+                <div class="field">
+                    <input type="text" placeholder="Repeat Password" required>
+                </div>
+                <input type="submit" value="Sign Up">
+            </form>
         </div>
-        <script src="app.js"></script>
     </body>
 </html>
-    

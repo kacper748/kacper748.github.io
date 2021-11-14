@@ -149,6 +149,34 @@ h1 {
     margin-bottom: 5px;
 }
 
+#stack h4 {
+    text-align: center;
+}
+
+.stack-display {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.stack-card {
+    margin: 20px;
+}
+
+.stack-card i {
+    font-size: 100px;
+}
+
+.stack-card img {
+    max-width: 100px;
+    height: auto;
+}
+
+.stack-card p {
+    text-align: center;
+}
+
 #projects {
     display: flex;
     flex-direction: column;
