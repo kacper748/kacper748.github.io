@@ -727,6 +727,10 @@ function playerChecks(targetPlayer) {
         playNextPhase();
     }
     if (targetPlayer.playerNumber == 0) {
+        $(':button').prop('disabled', true);
+        $(':button').css('color', 'green');
+        var delayForTheEnabling = (ALL_PLAYERS.length - 1) * 3000;
+        setTimeout(function () { $(':button').prop('disabled', false); $(':button').css('color', 'white'); }, delayForTheEnabling);
         computerPlayersMakeMoves();
     }
 }
@@ -978,4 +982,3 @@ function computerPlayersMakeMoves() {
     }
 }
 startTheGame();
-// USTAL || setTimeout (() => {funkcja}, 5000); ||
