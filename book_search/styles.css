@@ -1,0 +1,124 @@
+:root {
+    --mainColor: #333333;
+    --secondMain: #B8860B;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: auto;
+    background-color: var(--mainColor);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+}
+
+/* ------ NAV BAR -------- */
+
+nav {
+    background-color: var(--mainColor);
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--secondMain);
+    text-align: center;
+}
+
+nav h1 {
+    font-size: 30px;
+    margin: 0;
+    padding-top: 20px;
+}
+
+nav a {
+    color: var(--secondMain);
+}
+
+nav a:hover {
+    cursor: pointer;
+    color: var(--secondMain);
+}
+
+form {
+    margin: 20px 0;
+    text-align: center;
+}
+
+/* ------- SEARCH BAR ------- */
+
+#search {
+    background-color: transparent;
+    border:  2px solid var(--secondMain);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    color: white;
+}
+
+#search:focus {
+    outline: none;
+}
+
+#search::placeholder {
+    color: var(--secondMain);
+}
+
+#submit {
+    background-color: var(--secondMain);
+    border:  2px solid var(--secondMain);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+}
+
+#load { 
+    visibility: hidden;
+    content: '';
+    margin: 5px auto;
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--secondMain);
+    border-radius: 50%;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    animation: linear rotate 1s infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+/* -------- MAIN ---------- */
+
+main {
+    margin: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.book {
+    width: 300px;
+    height: 530px;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+    border: 2px solid var(--secondMain);
+}
+
+.book img {
+    width: 180px;
+    height: 270px;
+    background-color: var(--secondMain);
+}
+
+.description {
+    height: 110px;
+    overflow-y: hidden;
+}

@@ -5,7 +5,7 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: auto;
     color: white;
-    width: 100vw;
+    width: 100%;
     overflow-x: hidden;
 }
 
@@ -185,6 +185,7 @@ h1 {
 
 .project-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
 }
 
@@ -208,11 +209,7 @@ h1 {
 }
 
 .middle {
-    height: 25%;
-}
-
-.languages {
-    height: 11%;
+    height: 40%;
 }
 
 .subtext a {
@@ -257,11 +254,6 @@ h1 {
 }
 
 @media only screen and (max-width: 600px) {
-    .project-container {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
     h1 {
         font-size: 30px;
     }
