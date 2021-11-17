@@ -142,7 +142,8 @@ for (var i = 0; i < Spade.numberOfCards; i++) {
     ALL_SPADES[i] = new Spade(ALL_SPADES_URLS[i], (i + 2));
 }
 // Create a deck of cards
-var DECK_OF_CARDS = [ALL_CLUBS, ALL_DIAMONDS, ALL_HEARTS, ALL_SPADES];
+var DECK_OF_CARDS = [ALL_CLUBS, ALL_DIAMONDS, ALL_HEARTS, ALL_SPADES]; //needed to change to let to easily restore the number of cards
+var DECK_FOR_FUTURE_ROUNDS = JSON.parse(JSON.stringify(DECK_OF_CARDS));
 var CARD_TYPES = [Club, Diamond, Heart, Spade];
 var Player = /** @class */ (function () {
     function Player(playerNumber) {
@@ -173,8 +174,6 @@ var Player = /** @class */ (function () {
     }
     return Player;
 }());
-var winner;
-var winner2;
 var player = new Player(0);
 var player2 = new Player(1);
 var player3 = new Player(2);
@@ -182,9 +181,11 @@ var player4 = new Player(3);
 var player5 = new Player(4);
 var player6 = new Player(5);
 var ALL_PLAYERS = [player, player2, player3, player4, player5, player6];
+var PLAYERS_LEFT = [player, player2, player3, player4, player5, player6]; // number of players that are still in the game for the next rounds (with >0 money)
 var currentPhase = 0;
 var currentType;
 var currentNumber;
+var endOfTheRound = false;
 var BOARD = [];
 function startTheGame() {
     for (var i = 0; i < ALL_PLAYERS.length; i++) {
@@ -223,6 +224,7 @@ function playNextPhase() {
         $(".hidden").css("display", "none");
         $(".player-cards").css("display", "initial");
         checkForTheWinner();
+        endOfTheRound = true;
     }
 }
 function dealPlayer(targetPlayer, i) {
@@ -422,7 +424,7 @@ function checkForTheFlush(targetPlayer) {
         if (targetPlayer.allCards[i]["type"] == "spades") {
             counterOfSpadeFlush.push(targetPlayer.allCards[i]);
             if (counterOfSpadeFlush.length == 4) {
-                targetPlayer.counterOfSpadeFlush.sort(function (a, b) { return a - b; });
+                counterOfSpadeFlush.sort(function (a, b) { return a - b; });
                 targetPlayer.cardsInFlush = counterOfSpadeFlush;
                 targetPlayer.flushHighestNumber = counterOfSpadeFlush[4]["number"];
             }
@@ -430,7 +432,7 @@ function checkForTheFlush(targetPlayer) {
         else if (targetPlayer.allCards[i]["type"] == "diamonds") {
             counterOfDiamondFlush.push(targetPlayer.allCards[i]);
             if (counterOfDiamondFlush.length == 4) {
-                targetPlayer.counterOfDiamondFlush.sort(function (a, b) { return a - b; });
+                counterOfDiamondFlush.sort(function (a, b) { return a - b; });
                 targetPlayer.cardsInFlush = counterOfDiamondFlush;
                 targetPlayer.flushHighestNumber = counterOfDiamondFlush[4]["number"];
             }
@@ -438,7 +440,7 @@ function checkForTheFlush(targetPlayer) {
         else if (targetPlayer.allCards[i]["type"] == "hearts") {
             counterOfHeartFlush.push(targetPlayer.allCards[i]);
             if (counterOfHeartFlush.length == 4) {
-                targetPlayer.counterOfHeartFlush.sort(function (a, b) { return a - b; });
+                counterOfHeartFlush.sort(function (a, b) { return a - b; });
                 targetPlayer.cardsInFlush = counterOfHeartFlush;
                 targetPlayer.flushHighestNumber = counterOfHeartFlush[4]["number"];
             }
@@ -446,7 +448,7 @@ function checkForTheFlush(targetPlayer) {
         else if (targetPlayer.allCards[i]["type"] == "clubs") {
             counterOfClubFlush.push(targetPlayer.allCards[i]);
             if (counterOfClubFlush.length == 4) {
-                targetPlayer.counterOfClubFlush.sort(function (a, b) { return a - b; });
+                counterOfClubFlush.sort(function (a, b) { return a - b; });
                 targetPlayer.cardsInFlush = counterOfClubFlush;
                 targetPlayer.flushHighestNumber = counterOfClubFlush[4]["number"];
             }
@@ -543,6 +545,8 @@ function displayTheBestCombinationForTheHumanPlayer() {
 }
 function checkForTheWinner() {
     var largestPower = 0;
+    var winner;
+    var winner2;
     for (var i = 0; i < ALL_PLAYERS.length; i++) {
         if (ALL_PLAYERS[i].powerOfCards > largestPower) {
             largestPower = ALL_PLAYERS[i].powerOfCards;
@@ -705,6 +709,7 @@ function checkForTheWinner() {
     currentPot = 0;
     $("#player" + winner.playerNumber + "_money").text(winner.money);
     $("#currentPot").text(currentPot);
+    nextRound();
 }
 document.getElementById("check").addEventListener("click", function () { playerChecks(player); });
 document.getElementById("call").addEventListener("click", function () { playerCalls(player); });
@@ -726,11 +731,11 @@ function playerChecks(targetPlayer) {
     if (testIfEverybodyChecks()) {
         playNextPhase();
     }
-    if (targetPlayer.playerNumber == 0) {
-        $(':button').prop('disabled', true);
-        $(':button').css('color', 'green');
-        var delayForTheEnabling = (ALL_PLAYERS.length - 1) * 3000;
-        setTimeout(function () { $(':button').prop('disabled', false); $(':button').css('color', 'white'); }, delayForTheEnabling);
+    if (endOfTheRound == false) {
+        endOfTheRound = true;
+    }
+    else if (targetPlayer.playerNumber == 0) {
+        disableButtons();
         computerPlayersMakeMoves();
     }
 }
@@ -751,7 +756,11 @@ function playerCalls(targetPlayer) {
     if (testIfEverybodyChecks()) {
         playNextPhase();
     }
-    if (targetPlayer.playerNumber == 0) {
+    if (endOfTheRound == false) {
+        endOfTheRound = true;
+    }
+    else if (targetPlayer.playerNumber == 0) {
+        disableButtons();
         computerPlayersMakeMoves();
     }
 }
@@ -771,7 +780,11 @@ function playerBets(targetPlayer) {
     }
     targetPlayer.check = true;
     bet = true;
-    if (targetPlayer.playerNumber == 0) {
+    if (endOfTheRound == false) {
+        endOfTheRound = true;
+    }
+    else if (targetPlayer.playerNumber == 0) {
+        disableButtons();
         computerPlayersMakeMoves();
     }
 }
@@ -798,7 +811,11 @@ function playerRaises(targetPlayer) {
     }
     targetPlayer.check = true;
     bet = true;
-    if (targetPlayer.playerNumber == 0) {
+    if (endOfTheRound == false) {
+        endOfTheRound = true;
+    }
+    else if (targetPlayer.playerNumber == 0) {
+        disableButtons();
         computerPlayersMakeMoves();
     }
 }
@@ -826,6 +843,7 @@ function playerFolds(targetPlayer, playerNumberInArray) {
         playNextPhase();
     }
     if (targetPlayer.playerNumber == 0) {
+        disableButtons();
         humanPlayer = 0;
         someoneFolded = false;
         $(".moves").css("display", "none");
@@ -845,6 +863,12 @@ function testIfEverybodyChecks() {
         return true;
     }
 }
+function disableButtons() {
+    $(':button').prop('disabled', true);
+    $(':button').css('color', 'green');
+    var delayForTheEnabling = (ALL_PLAYERS.length - 1) * 3000;
+    setTimeout(function () { $(':button').prop('disabled', false); $(':button').css('color', 'white'); }, delayForTheEnabling);
+}
 function computerPlayersMakeMoves() {
     var randomDigit;
     var delayForTheRotation = 0;
@@ -855,6 +879,8 @@ function computerPlayersMakeMoves() {
         delayForTheRotation = delayForTheMove;
         delayForTheMove += 3000;
         function loadingRotation() {
+            console.log(ALL_PLAYERS);
+            console.log(i);
             $("#player" + ALL_PLAYERS[i].playerNumber + "-description").css("animation", "rotation 2s linear");
         }
         function nextComputerMove() {
@@ -980,5 +1006,73 @@ function computerPlayersMakeMoves() {
         _loop_1(i);
         i = out_i_1;
     }
+}
+function nextRound() {
+    $(".hidden").css("display", "initial");
+    $(".player-cards").css("display", "none");
+    for (var i = 0; i < PLAYERS_LEFT.length; i++) {
+        if (PLAYERS_LEFT[i].money == 0) {
+            $(".folded" + PLAYERS_LEFT[i].playerNumber).css("display", "initial");
+            PLAYERS_LEFT.splice(i, 1);
+            i--;
+        }
+        else {
+            $(".folded" + PLAYERS_LEFT[i].playerNumber).css("display", "none");
+        }
+    }
+    for (var i = 0; i < PLAYERS_LEFT.length; i++) {
+        ALL_PLAYERS[i] = PLAYERS_LEFT[i];
+    }
+    for (var i = 1; i < 6; i++) {
+        $("#board" + i).attr("src", "");
+    }
+    currentPhase = 0;
+    BOARD.length = 0;
+    DECK_OF_CARDS = JSON.parse(JSON.stringify(DECK_FOR_FUTURE_ROUNDS));
+    $(".player1").css("left", "45%");
+    $(".player1").css("top", "5%");
+    $(".player1").css("display", "initial");
+    $(".player2").css("left", "8%");
+    $(".player2").css("top", "15%");
+    $(".player2").css("display", "initial");
+    $(".player3").css("left", "75%");
+    $(".player3").css("top", "15%");
+    $(".player3").css("display", "initial");
+    $(".player4").css("left", "10%");
+    $(".player4").css("top", "70%");
+    $(".player4").css("display", "initial");
+    $(".player5").css("left", "75%");
+    $(".player5").css("top", "70%");
+    $(".player5").css("display", "initial");
+    for (var i = 0; i < ALL_PLAYERS.length; i++) {
+        if (i > 0) {
+            $("#player" + ALL_PLAYERS[i].playerNumber + "_action").text("");
+        }
+        ALL_PLAYERS[i].hand.length = 0;
+        ALL_PLAYERS[i].check = false;
+        ALL_PLAYERS[i].allCards.length = 0;
+        ALL_PLAYERS[i].allNumbers.length = 0;
+        ALL_PLAYERS[i].allRepeatedCards.length = 0;
+        ALL_PLAYERS[i].allRepeatedNumbers.length = 0;
+        ALL_PLAYERS[i].highestCard = 0;
+        ALL_PLAYERS[i].firstRepeatedNumber.length = 0;
+        ALL_PLAYERS[i].secondRepeatedNumber.length = 0;
+        ALL_PLAYERS[i].thirdRepeatedNumber.length = 0;
+        ALL_PLAYERS[i].pair = 0;
+        ALL_PLAYERS[i].twoPairs = 0;
+        ALL_PLAYERS[i].threeOfAKind = 0;
+        ALL_PLAYERS[i].straight = 0;
+        ALL_PLAYERS[i].cardsInFlush.length = 0;
+        ALL_PLAYERS[i].flushHighestNumber = 0;
+        ALL_PLAYERS[i].fullHouse = 0;
+        ALL_PLAYERS[i].fourOfAKind = 0;
+        ALL_PLAYERS[i].straightFlush = 0;
+        ALL_PLAYERS[i].royalFlush = 0;
+        ALL_PLAYERS[i].powerOfCards = 0;
+    }
+    if (player.money > 0) {
+        humanPlayer = 1;
+    }
+    startTheGame();
 }
 startTheGame();
