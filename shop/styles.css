@@ -1,6 +1,6 @@
 :root {
   --background: white;
-  --main: #c09f80;
+  --main: burlywood;
   --font: black;
 }
 
@@ -9,7 +9,7 @@ body {
     margin: auto;
     color: var(--font);
     text-align: center;
-    font-family: 'Dela Gothic One';
+    font-family: 'Times New Roman';
     background: var(--background);
 }
 
@@ -26,7 +26,7 @@ header a{
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 3rem;
+    font-size: 3.7rem;
 }
 
 /*------------- NAVIGATION BAR ---------------*/
@@ -42,7 +42,7 @@ nav a {
     float: left;
     color: var(--font);
     text-align: center;
-    padding: 14px 16px;
+    padding: 14px;
     text-decoration: none;
     font-size: 17px;
 }
@@ -56,12 +56,7 @@ nav a:hover {
     color: var(--font);
 }
 
-nav a:active {
-    background-color: lightgreen;
-    color: white;
-}
-
-.cart-btn {
+.cart-button {
     position: absolute;
     top: 20px;
     right: 40px;
@@ -73,7 +68,7 @@ nav a:active {
     right: 34px;
     padding: 0 5px;
     font-size: 0.8rem;
-    color: white;
+    color: var(--font);
     border-radius: 30%;
     background-color: var(--main);
 }
@@ -81,7 +76,7 @@ nav a:active {
 /*-------------- BANNER -------------*/
 
 .main {
-    min-height: calc(100vh - 60px);
+    min-height: 100vh;
     background: url("./images/main-background.png") center/cover no-repeat;
     display: flex;
     align-items: center;
@@ -92,19 +87,19 @@ nav a:active {
     text-align: center;
     background: rgba(255, 255, 255, 0.8);
     display: inline-block;
-    padding: 2rem;
+    padding: 30px;
   }
 
 .banner-title {
-    font-size: 3.4rem;
-    letter-spacing: 0.1rem;
-    margin-bottom: 3rem;
+    font-size: 55px;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
   }
 
 .banner-btn {
-    padding: 1rem 3rem;
-    letter-spacing: 0.1rem;
-    font-size: 1rem;
+    padding: 15px 30px;
+    letter-spacing: 1px;
+    font-size: 16px;
     background: var(--main);
     color: var(--font);
     border: 1px solid var(--main);
@@ -125,7 +120,7 @@ nav a:active {
 
 .filter {
   background-color: var(--main);
-  border: none;
+  border: 1px solid var(--background);
   text-align: center;
   font-size: 16px;
   padding: 15px 32px;
@@ -133,6 +128,7 @@ nav a:active {
 
 .filter:hover {
   background-color: white;
+  border: 1px solid var(--main);
   color: var(--font);
   cursor: pointer;
 }
@@ -140,7 +136,7 @@ nav a:active {
 /*--------------- PRODUCTS ------------*/
 
 .products {
-    padding: 4rem 0;
+    padding: 20px 0;
   }
 
 .section-title h2 {
@@ -148,7 +144,6 @@ nav a:active {
     font-size: 2.5rem;
     margin-bottom: 4rem;
     text-transform: capitalize;
-    letter-spacing: 0.1rem;
   }
 
 .products-center {
@@ -166,30 +161,30 @@ nav a:active {
     overflow: hidden;
   }
 
-.bag-btn {
+.bag-button {
     position: absolute;
     top: 70%;
     right: 0;
     background: var(--main);
     border: none;
     text-transform: uppercase;
-    padding: 0.5rem 0.75rem;
-    letter-spacing: 0.1rem;
+    padding: 8px;
+    letter-spacing: 1px;
     font-weight: bold;
     transition: all 0.3s linear;
     transform: translateX(101%);
     cursor: pointer;
   }
 
-.bag-btn:hover {
+.bag-button:hover {
     color: white;
   }
 
 .fa-shopping-cart {
-    margin-right: 0.5rem;
+    margin-right: 5px;
   }
 
-.img-container:hover .bag-btn {
+.img-container:hover .bag-button {
     transform: translateX(0);
   }
 
@@ -206,15 +201,15 @@ nav a:active {
   
 .product h3 {
     text-transform: capitalize;
-    font-size: 1.1rem;
-    margin-top: 1rem;
-    letter-spacing: 0.1rem;
+    font-size: 18px;
+    margin-top: 17px;
+    letter-spacing: 1px;
     text-align: center;
   }
   
 .product h4 {
-    margin-top: 0.7rem;
-    letter-spacing: 0.1rem;
+    margin-top: 10px;
+    letter-spacing: 1px;
     color: var(--font);
     text-align: center;
   }
@@ -262,15 +257,15 @@ nav a:active {
   }
   
 .close-cart {
-    font-size: 1.7rem;
+    font-size: 25px;
     cursor: pointer;
   }
 
 .cart h2 {
     text-transform: capitalize;
     text-align: center;
-    letter-spacing: 0.1rem;
-    margin-bottom: 2rem;
+    letter-spacing: 1px;
+    margin-bottom: 32px;
   }
 
   /*---------- Cart Item -------------------- */
