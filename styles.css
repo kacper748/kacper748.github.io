@@ -31,20 +31,8 @@ span {
 
 .name {
     margin: auto;
-    margin-top: 50px;
+    padding-top: 50px;
     width: 400px;
-    height: 76px;
-    overflow: hidden;
-    animation: textTyping 2s linear;
-}
-
-@keyframes textTyping {
-    0% {
-        width: 0px;
-    }
-    100% {
-        width: 400px;
-    }
 }
 
 .hero {
@@ -59,15 +47,17 @@ span {
 }
 
 nav {
-    display: flex;
+    /* display: flex; */
+    float: right;
     justify-content: space-between;
 }
 
 .css-image {
     margin: 10px;
+    margin-left: 13px;
     height: 40px;
     left: 50%;
-    position: relative;
+    position: absolute;
     font-size: 40px;
     width: 40px;
     border-radius: 120px;
@@ -261,6 +251,7 @@ h1 {
 @media only screen and (max-width: 600px) {
     h1 {
         font-size: 30px;
+        width: auto;
     }
 
     nav ul {
@@ -274,7 +265,7 @@ h1 {
 
     .css-image {
         margin-top: -10px;
-        margin-left: 0px;
+        margin-left: 5px;
         font-size: 20px;
     }
 

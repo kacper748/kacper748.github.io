@@ -332,7 +332,7 @@ form div {
   padding: 10px;
 }
 
-form input[type="text"] {
+form input[type="text"], form input[type="password"] {
   width: 200px;
   height: 20px;
   border-bottom: 3px solid var(--main);
@@ -341,7 +341,7 @@ form input[type="text"] {
   border-right: none;
 }
 
-form input[type="text"]:focus {
+form input[type="text"]:focus, form input[type="password"]:focus {
   outline:none;
 }
 

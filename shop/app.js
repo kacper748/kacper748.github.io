@@ -180,9 +180,9 @@ function addProductToTheCart(products, buttonId) {
                 <span class="remove-item" data-id=${products[i].id}>remove</span>
             </div>
             <div>
-                <i class="fas fa-chevron-up" data-id=${products[i].id}></i>
+                <i class="fas fa-chevron-up" active="false" data-id=${products[i].id}></i>
                 <p class="item-amount">${products[i].amount}</p>
-                <i class="fas fa-chevron-down" data-id=${products[i].id}></i>
+                <i class="fas fa-chevron-down" active="false" data-id=${products[i].id}></i>
             </div>`;
             cartContent.appendChild(div);
             removeProductFromTheCart();
@@ -205,6 +205,18 @@ function removeProductFromTheCart() {
             var buttonClicked = event.target;
             buttonClicked.parentElement.parentElement.remove();
             buttonId = buttonClicked.getAttribute("data-id");
+
+            var currentAmount = parseFloat(button.previousElementSibling.innerText);
+            items.forEach(product => {
+                if (product.id == buttonId) {
+                    tempItemPrice = product.price;
+                }
+            })
+            var currentAmountOfItems = (-1) * (currentAmount/tempItemPrice);
+            countCurrentAmount(currentAmount, buttonId, currentAmountOfItems);
+            productsInCart += currentAmountOfItems;
+            cartItems.innerText = productsInCart; 
+
             var addButtons = document.querySelectorAll(".bag-button");
             addButtons.forEach(button => {
                 var currentButtonId = button.getAttribute('data-id');
@@ -231,42 +243,49 @@ function hideCart() {
 function addAnotherProduct() {
     var addButtons = document.querySelectorAll(".fa-chevron-up");
     addButtons.forEach(button => {
-        button.addEventListener("click", function(event) {
-            var buttonClicked = event.target;
-            var buttonId = buttonClicked.getAttribute("data-id");
-            var currentAmount = 1 + parseInt(buttonClicked.nextElementSibling.innerHTML);
-            buttonClicked.nextElementSibling.innerHTML = currentAmount;
-            countCurrentAmount(currentAmount, buttonId, 1);
-            productsInCart++;
-            cartItems.innerText = productsInCart;
-        })
+        if (button.getAttribute("active") == "false") {
+            button.setAttribute("active", "true");
+            button.addEventListener("click", function(event) {
+                var buttonClicked = event.target;
+                var buttonId = buttonClicked.getAttribute("data-id");
+                var currentAmount = 1 + parseInt(buttonClicked.nextElementSibling.innerHTML);
+                buttonClicked.nextElementSibling.innerHTML = currentAmount;
+                countCurrentAmount(currentAmount, buttonId, 1);
+                productsInCart++;
+                cartItems.innerText = productsInCart; 
+            })
+        }
+        
     })
 }
 
 function deleteAnotherProduct() {
     var deleteButtons = document.querySelectorAll(".fa-chevron-down");
     deleteButtons.forEach(button => {
-        button.addEventListener("click", function(event) {
-            var buttonClicked = event.target;
-            var buttonId = buttonClicked.getAttribute("data-id");
-            var currentAmount = parseInt(buttonClicked.previousElementSibling.innerHTML) - 1;
-            buttonClicked.previousElementSibling.innerHTML= currentAmount;
-            countCurrentAmount(currentAmount, buttonId, (-1));
-            productsInCart--;
-            cartItems.innerText = productsInCart;
+        if (button.getAttribute("active") == "false") {
+            button.setAttribute("active", "true");
+            button.addEventListener("click", function(event) {
+                var buttonClicked = event.target;
+                var buttonId = buttonClicked.getAttribute("data-id");
+                var currentAmount = parseInt(buttonClicked.previousElementSibling.innerHTML) - 1;
+                buttonClicked.previousElementSibling.innerHTML= currentAmount;
+                countCurrentAmount(currentAmount, buttonId, (-1));
+                productsInCart--;
+                cartItems.innerText = productsInCart;
 
-            if (currentAmount == 0) {
-                buttonClicked.parentElement.parentElement.remove();
-                var addButtons = document.querySelectorAll(".bag-button");
-                addButtons.forEach(button => {
-                    var currentButtonId = button.getAttribute('data-id');
-                    if (currentButtonId == buttonId) {
-                        button.innerHTML = '<i class="fas fa-shopping-cart"></i>ADD TO CART';
-                        button.disabled = false;
-                    }
-                })
-            }
-        })
+                if (currentAmount == 0) {
+                    buttonClicked.parentElement.parentElement.remove();
+                    var addButtons = document.querySelectorAll(".bag-button");
+                    addButtons.forEach(button => {
+                        var currentButtonId = button.getAttribute('data-id');
+                        if (currentButtonId == buttonId) {
+                            button.innerHTML = '<i class="fas fa-shopping-cart"></i>ADD TO CART';
+                            button.disabled = false;
+                        }
+                    })
+                }
+            })
+        }
     })
 }
 
